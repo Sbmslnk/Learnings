@@ -1,0 +1,101 @@
+def getdate():
+    import datetime
+    return datetime.datetime.now()
+
+def inst(k):
+    if k==1:
+        c=int(input("Enter 1 for Food & 2 for Exercise"))
+        if c==1:
+             print("Enter the Food:-")
+             value = input()
+             with open("Harry_food.txt", "a") as d:
+                 d.write(str([str(getdate())])+ " : " + value+ "\n" )
+             print("Successfully return")
+
+        elif c==2:
+             print("enter The Exercise")
+             value = input()
+             with open("Harry_Exercise.txt" , "a") as d:
+                d.write(str([str(getdate())]) + " : " + value +"\n")
+             print("Successfully return")
+
+    elif k==2:
+        c = int(input("Enter 1 for Food & 2 for Exercise"))
+        if c == 1:
+            print("Enter the Food:-")
+            value = input()
+            with open("Rohan_Food.txt", "a") as d:
+                d.write(str([str(getdate())]) + " : " + value + "\n")
+            print("Successfully return")
+
+        elif c == 2:
+            print("enter The Exercise")
+            value = input()
+            with open("Rohan_Exercise.txt", "a") as d:
+                d.write(str([str(getdate())]) + " : " + value + "\n" )
+            print("Successfully return")
+
+    elif k == 3:
+        c = int(input("Enter 1 for Food & 2 for Exercise"))
+        if c == 1:
+                print("Enter the Food:-")
+                value = input()
+                with open("Ashu_Food.txt", "a") as d:
+                    d.write(str([str(getdate())]) + " : " + value + "\n")
+                print("Successfully return")
+
+        elif c == 2:
+                print("enter The Exercise")
+                value = input()
+                with open("Ashu_Exercise.txt", "a") as d:
+                    d.write(str([str(getdate())]) + " : " + value + "\n")
+                print("Successfully return")
+
+def rtv(k):
+    if k==1:
+        c=int(input("Enter 1 for Food & 2 for Exercise"))
+        if c==1:
+             with open("Harry_Food.txt") as d:
+                for i in d:
+                    print(i, end=",")
+
+        elif c==2:
+             with open("Harry_Exercise.txt") as d:
+                 for i in d:
+                     print(i, end=",")
+
+    elif k==2:
+        c = int(input("Enter 1 for Food & 2 for Exercise"))
+        if c == 1:
+                with open("Rohan_Food.txt") as d:
+                    for i in d:
+                        print(i, end=",")
+
+        elif c == 2:
+                with open("Rohan_Exercise.txt") as d:
+                    for i in d:
+                        print(i, end=",")
+
+    elif k == 3:
+        c = int(input("Enter 1 for Food & 2 for Exercise"))
+        if c == 1:
+                with open("Harry_Food.txt") as d:
+                    for i in d:
+                        print(i, end=",")
+
+        elif c == 2:
+                with open("Harry_Exercise.txt") as d:
+                    for i in d:
+                        print(i, end=",")
+
+print("Welcome to Health Management System")
+print("Please Enter 1 to insert and 2 for retrive :-")
+a1 = int(input())
+
+if a1 == 1:
+    b= int(input("Enter 1 for Harry \n Enter 2 for Rohan \n Enter 3 for Ashu"))
+    inst(b)
+
+else:
+    b = int(input("Enter 1 for Harry \n Enter 2 for Rohan \n Enter 3 for Ashu"))
+    rtv(b)
